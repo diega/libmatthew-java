@@ -1,0 +1,28 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>cx.ath.matthew</groupId>
+  <artifactId>libmatthew-libcgi</artifactId>
+  <version>0.5</version>
+  <packaging>so</packaging>
+
+   <build>   
+     <plugins>
+       <plugin>
+         <groupId>org.codehaus.mojo</groupId>
+         <artifactId>native-maven-plugin</artifactId>
+         <version>1.0-alpha-6</version>
+         <extensions>true</extensions>
+         <configuration>
+           <sources>
+             <source>
+               <directory>src/main/native</directory>
+               <includes><include>**/*.c</include></includes>
+             </source>
+           </sources>
+         </configuration>
+       </plugin>
+     </plugins>
+   </build>
+
+</project>
