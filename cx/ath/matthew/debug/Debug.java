@@ -86,7 +86,7 @@ public class Debug
    /** Verbose debug messages */
    public static final int VERBOSE = 6;
    /** Set this to false to disable compilation of Debug statements */
-   public static final boolean debug = false;
+   public static final boolean debug = (System.getProperty("libmatthew.debug") == true);
    /** The current output stream (defaults to System.err) */
    public static PrintStream debugout = System.err;
    private static Properties prop = null;
