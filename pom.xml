@@ -12,5 +12,6 @@
     <module>libmatthew-unix</module>
     <module>libmatthew-cgi</module>
     <module>libmatthew-io</module>
+    <module>libmatthew-libcgi</module>
   </modules>
 </project>

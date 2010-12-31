@@ -6,23 +6,42 @@
   <version>0.5</version>
   <packaging>so</packaging>
 
-   <build>   
-     <plugins>
-       <plugin>
-         <groupId>org.codehaus.mojo</groupId>
-         <artifactId>native-maven-plugin</artifactId>
-         <version>1.0-alpha-6</version>
-         <extensions>true</extensions>
-         <configuration>
-           <sources>
-             <source>
-               <directory>src/main/native</directory>
-               <includes><include>**/*.c</include></includes>
-             </source>
-           </sources>
-         </configuration>
-       </plugin>
-     </plugins>
-   </build>
+  <dependencies>
+    <dependency>
+      <groupId>cx.ath.matthew</groupId>
+      <artifactId>libmatthew-cgi</artifactId>
+      <version>0.5</version>
+    </dependency>
+  </dependencies>
 
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>native-maven-plugin</artifactId>
+        <version>1.0-alpha-6</version>
+        <extensions>true</extensions>
+        <configuration>
+          <javahClassNames>
+            <javahClassName>cx.ath.matthew.cgi.CGI</javahClassName>
+          </javahClassNames>
+          <javahOutputFileName>cgi-java.h</javahOutputFileName>
+          <sources>
+            <source>
+              <directory>src/main/native</directory>
+              <includes><include>**/*.c</include></includes>
+            </source>
+          </sources>
+          <jdkIncludePath>/usr/lib/jvm/java-6-sun-1.6.0.22/include/</jdkIncludePath>
+          <javahOS>linux</javahOS>
+          <compilerStartOptions>
+            <compilerStartOption>-Wall -Os -pedantic -Werror -std=c99 -fpic -fno-stack-protector</compilerStartOption>
+          </compilerStartOptions>
+          <linkerStartOptions>
+            <linkerStartOption>-shared</linkerStartOption>
+          </linkerStartOptions>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
 </project>
