@@ -1,0 +1,12 @@
+.classes
+.enabledebug
+.disabledebug
+*.o
+*.h
+*.so
+*.tar.gz
+*.jar
+*.cgi
+Manifest
+classes/
+doc/
